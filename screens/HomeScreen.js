@@ -124,10 +124,10 @@ const HomeScreen = ({ navigation }) => {
             <Text style={styles.boxText}>Scan QR Code</Text>
           </View>
 
-          <View style={styles.box}>
+          <Pressable style={styles.box} onPress={() => navigation.navigate('Scanner')}>
             <MaterialCommunityIcons name="barcode-scan" size={48} color="#fff" />
             <Text style={styles.boxText}>Scan Bar Code</Text>
-          </View>
+          </Pressable>
         </View>
 
         <Pressable
