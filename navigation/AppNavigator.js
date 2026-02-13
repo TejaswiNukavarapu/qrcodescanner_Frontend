@@ -13,6 +13,8 @@ import LiveOrder from '../lol/LiveOrder';
 import ProductList from '../lol/ProductList';
 import ScannerScreen from '../screens/ScannerScreen';
 import SuccessScreen from '../screens/SuccessScreen';
+import QRScannerScreen from '../screens/QRScannerScreen';
+import QRSuccessScreen from '../screens/QRSuccessScreen';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -81,6 +83,16 @@ const AppNavigator = () => {
         <Stack.Screen
           name="Success"
           component={SuccessScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="QRScanner"
+          component={QRScannerScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="QRSuccess"
+          component={QRSuccessScreen}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

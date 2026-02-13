@@ -3,10 +3,10 @@ import { Text, View, StyleSheet, Button, Vibration, Alert } from 'react-native';
 import { CameraView, useCameraPermissions } from 'expo-camera';
 
 const BARCODE_SETTINGS = {
-    barcodeTypes: ["qr", "ean13", "ean8", "upc_a", "upc_e", "code128", "code39", "pdf417", "aztec", "datamatrix"],
+    barcodeTypes: ["qr"],
 };
 
-export default function ScannerScreen({ navigation }) {
+export default function QRScannerScreen({ navigation }) {
     const [permission, requestPermission] = useCameraPermissions();
     const [scanned, setScanned] = useState(false);
 
@@ -29,7 +29,7 @@ export default function ScannerScreen({ navigation }) {
 
         Vibration.vibrate();
 
-        navigation.navigate('Success', { qrData: data });
+        navigation.navigate('QRSuccess', { qrData: data });
 
         setTimeout(() => {
             setScanned(false);
@@ -52,7 +52,7 @@ export default function ScannerScreen({ navigation }) {
                         <View style={[styles.corner, styles.bottomLeft]} />
                         <View style={[styles.corner, styles.bottomRight]} />
                     </View>
-                    <Text style={styles.instructionText}>Align code within frame</Text>
+                    <Text style={styles.instructionText}>Align QR code within frame</Text>
                 </View>
             </CameraView>
         </View>
