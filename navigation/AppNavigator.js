@@ -11,6 +11,8 @@ import ProfileScreen from '../screens/ProfileScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import LiveOrder from '../lol/LiveOrder';
 import ProductList from '../lol/ProductList';
+import ScannerScreen from '../screens/ScannerScreen';
+import SuccessScreen from '../screens/SuccessScreen';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -69,6 +71,16 @@ const AppNavigator = () => {
         <Stack.Screen
           name="ProductList"
           component={ProductList}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Scanner"
+          component={ScannerScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Success"
+          component={SuccessScreen}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
