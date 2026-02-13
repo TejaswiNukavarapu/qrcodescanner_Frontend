@@ -19,25 +19,23 @@ export default function App() {
 const styles = StyleSheet.create({
   webContainer: {
     flex: 1,
-    backgroundColor: '#333', // Dark background for the area outside the "phone"
+    backgroundColor: '#f0f2f5', // Professional light gray background
     justifyContent: 'center',
     alignItems: 'center',
   },
   phoneWrapper: {
-    width: '100%',
-    maxWidth: 450, // Typical mobile phone width
-    height: '100%',
-    maxHeight: 900, // Typical mobile phone height
+    width: Platform.OS === 'web' ? '96%' : '100%',
+    maxWidth: Platform.OS === 'web' ? '96%' : 450, // Massive width for laptop, narrow for mobile
+    height: Platform.OS === 'web' ? '96%' : '100%',
+    maxHeight: Platform.OS === 'web' ? '96%' : '100%',
     backgroundColor: '#fff',
     overflow: 'hidden',
-    // Realistic shadow for the "phone" look
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 10 },
-    shadowOpacity: 0.3,
-    shadowRadius: 20,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: Platform.OS === 'web' ? 0.05 : 0.3,
+    shadowRadius: 15,
     elevation: 20,
-    // Rounded corners like a phone
     borderRadius: Platform.OS === 'web' ? 20 : 0,
-    marginVertical: Platform.OS === 'web' ? 20 : 0,
+    marginVertical: 0,
   },
 });
