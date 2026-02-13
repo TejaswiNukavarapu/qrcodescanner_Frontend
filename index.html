@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Product View</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <button class="back-btn"><i class="fa-solid fa-arrow-left"></i></button>
+            <h1>Viewing Product</h1>
+        </header>
+
+        <main class="main-content">
+            <!-- Product Info Section -->
+            <section class="product-info">
+                <h2 class="section-title">Medicine Product</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="info-label">Medicine Name</span>
+                        <span class="info-value">Full Name</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Medicine ID</span>
+                        <span class="info-value">MID456</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Image View Section (Hidden initially) -->
+            <section id="image-view" class="image-view hidden">
+                <div class="image-wrapper">
+                    <img id="product-image" src="" alt="Medicine Image">
+                </div>
+            </section>
+
+            <!-- Upload Placeholder Section -->
+            <section id="upload-section" class="upload-section">
+                <div class="upload-placeholder" id="upload-trigger">
+                    <div class="upload-icon-wrapper">
+                        <i class="fa-solid fa-camera-retro"></i>
+                        <div class="upload-arrow"><i class="fa-solid fa-arrow-up"></i></div>
+                    </div>
+                    <span>Upload Product Image</span>
+                </div>
+            </section>
+        </main>
+
+        <!-- Bottom Sheet Modal -->
+        <div id="upload-modal" class="modal-overlay hidden">
+            <div class="bottom-sheet">
+                <div class="sheet-handle"></div>
+                <h3>Upload Product Image</h3>
+                
+                <div class="options-group">
+                    <div class="option-btn" id="camera-option">
+                        <div class="option-left">
+                            <i class="fa-solid fa-camera"></i>
+                            <span>Capture with Camera</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                    
+                    <div class="option-btn" id="gallery-option">
+                        <div class="option-left">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Select from Gallery</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <input type="file" id="file-input" accept="image/*" class="hidden">
+                <input type="file" id="camera-input" accept="image/*" capture="environment" class="hidden">
+
+                <button id="upload-submit" class="primary-btn disabled">Upload & Continue</button>
+            </div>
+        </div>
+
+        <!-- Success Toast -->
+        <div id="success-toast" class="toast hidden">
+            <div class="toast-content">
+                <div class="success-icon">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <p>Image Uploaded Successfully</p>
+            </div>
+        </div>
+
+        <!-- Loading Overlay -->
+        <div id="loading-overlay" class="loading-overlay hidden">
+            <div class="loader"></div>
+            <p>Uploading to Cloudinary...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
