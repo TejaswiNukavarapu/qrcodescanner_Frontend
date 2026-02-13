@@ -9,6 +9,8 @@ import OTPVerificationScreen from '../screens/OTPVerificationScreen';
 import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import LiveOrder from '../lol/LiveOrder';
+import ProductList from '../lol/ProductList';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -57,6 +59,16 @@ const AppNavigator = () => {
         <Stack.Screen
           name="Main"
           component={TabNavigator}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="LiveOrder"
+          component={LiveOrder}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="ProductList"
+          component={ProductList}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
