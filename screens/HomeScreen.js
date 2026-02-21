@@ -119,10 +119,10 @@ const HomeScreen = ({ navigation }) => {
 
       <ScrollView contentContainerStyle={styles.content}>
         <View style={styles.row}>
-          <View style={styles.box}>
+          <Pressable style={styles.box} onPress={() => navigation.navigate('QRScanner')}>
             <MaterialCommunityIcons name="qrcode-scan" size={48} color="#fff" />
             <Text style={styles.boxText}>Scan QR Code</Text>
-          </View>
+          </Pressable>
 
           <Pressable style={styles.box} onPress={() => navigation.navigate('Scanner')}>
             <MaterialCommunityIcons name="barcode-scan" size={48} color="#fff" />
